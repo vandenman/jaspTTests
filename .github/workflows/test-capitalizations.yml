@@ -1,0 +1,18 @@
+on: 
+  push:
+    paths: ['**.R', 'NAMESPACE', '**.md', '**.html', '**.qml', 'inst/Description.qml', '**.yml']
+  pull_request:
+    paths: ['**.R', 'NAMESPACE', '**.md', '**.html', '**.qml', 'inst/Description.qml']
+
+name: test-capitalizations
+
+jobs:
+  verify-capitalizations:
+    runs-on: ubuntu-latest
+  
+    env:
+      GITHUB_TOKEN: ${{ secrets.REPO_KEY }}
+
+    steps:    
+      - uses: actions/checkout@v2
+      - uses: vandenman/jasp-actions/test-capitalizations@verify-capitalization-helpfiles
