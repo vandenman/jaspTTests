@@ -12,7 +12,8 @@ jobs:
 
   unit-tests:
     if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.event.pull_request.base.repo.full_name
-    uses: vandenman/jasp-actions/.github/workflows/unittests.yml@fix_build
+    #uses: vandenman/jasp-actions/.github/workflows/unittests.yml@fix_build
+    uses: vandenman/jasp-actions/.github/workflows/unittests.yml@ddb4c72f36e2b1723caabc4505a7b958cce0bd67
     with:
       needs_JAGS: false
 
