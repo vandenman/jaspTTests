@@ -15,3 +15,4 @@ jobs:
     uses: vandenman/jasp-actions/.github/workflows/unittests.yml@fix_build
     with:
       needs_JAGS: false
+
